@@ -55,7 +55,7 @@ public class ExactChangeTest {
 				cr.loadWithoutEvents(new Coin(vm.getCoinKindForRack(i)));
 			i++;
 		}
-		
+
 		List<Integer> popCanCounts = new ArrayList<Integer>();
 		Integer[] popCanCou = {1,1,1};
 		popCanCounts.addAll(Arrays.asList(popCanCou));
@@ -68,11 +68,14 @@ public class ExactChangeTest {
 		}
 		
 	}
-	
+
 	@Test
 	public void insertTest() {
 		try {
 			vm.getCoinReceptacle().acceptCoin(new Coin(100));
+			vm.getCoinReceptacle().acceptCoin(new Coin(100));
+			vm.getCoinReceptacle().acceptCoin(new Coin(25));
+			vm.getCoinReceptacle().acceptCoin(new Coin(25));
 		} catch (CapacityExceededException e) {
 			e.printStackTrace();
 		} catch (DisabledException e) {
